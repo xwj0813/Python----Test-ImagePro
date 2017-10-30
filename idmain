@@ -1,0 +1,7 @@
+import cv2
+from dectectTXZ import TextDectTXZ
+d=TextDectTXZ('F:/image/Word/50_correct.jpg')
+boxes=d.detect()
+for box in  boxes:
+    cv2.rectangle(d.resize_img,(box[0],box[1]),(box[2],box[3]),(255,0,0),3)
+cv2.imwrite("F:/image/Word/cut.jpg",d.resize_img)
